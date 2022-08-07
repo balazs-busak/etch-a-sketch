@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+    flex: 1;
+    border: 10px;
+    border-style: dashed;
+    border-color:black;
+    background-color: beige;
+}
