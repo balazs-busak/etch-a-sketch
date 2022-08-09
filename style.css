@@ -1,8 +1,12 @@
-.container {
+.board {
+    width: 960px;
+}
+
+.grid-row {
     display: flex;
-    flex: 1;
-    border: 10px;
-    border-style: dashed;
-    border-color:black;
-    background-color: beige;
+}
+
+.grid-cell {
+    background-color: rgb(143, 134, 120);
+    border: 1px solid black
 }
