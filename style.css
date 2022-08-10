@@ -1,5 +1,5 @@
 .board {
-    width: 960px;
+    width: 480;
 }
 
 .grid-row {
@@ -8,5 +8,10 @@
 
 .grid-cell {
     background-color: rgb(143, 134, 120);
-    border: 1px solid black
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
