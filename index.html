@@ -10,7 +10,16 @@
 </head>
 <body>
     <div class="container">
-        <div class="board"></div>
+        <label for="size">Choose board size</label>
+        <select id="sizeSelector" onchange="newSize();">
+            <option value="16">Small</option>
+            <option value="32">Medium</option>
+            <option value="64">Large</option>
+        </select>
+        
+        <div class="board">
+
+        </div>
     </div>
 </body>
 </html>
