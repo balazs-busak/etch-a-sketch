@@ -1,7 +1,7 @@
 const container = document.querySelector('.container');
 const board = document.querySelector('.board');
 
-let sizeNum = 100;
+let sizeNum = 16;
 // Function to create a number of divs in rows in which there are cells so it makes a square, using loops.
 function createGrid (sizeNum) {
     for(let i = 0; i < sizeNum; i++) {
@@ -38,7 +38,7 @@ function changeColor(e) {
 function newSize () {
     const boardSize = document.querySelector('#sizeSelector').value;
     
-    if (boardSize === "16") {
+    if (boardSize === '16') {
         sizeNum = 16;
         
     } else if (boardSize === '32') {
@@ -53,4 +53,10 @@ function newSize () {
     createGrid(sizeNum);
 }
 newSize()
+// Onclick of reset button removes all cells then creates a new grid with the function so it doesn't have to reload the page
+const resetBtn = document.querySelector('#reset');
+resetBtn.addEventListener('click', function() {
+    document.querySelectorAll(".grid-cell").forEach(e => e.remove());
+    createGrid(sizeNum);
+});
 

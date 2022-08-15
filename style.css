@@ -1,5 +1,10 @@
+
+
+
 .board {
     width: 480;
+    align-content: center;
+    align-items: center;
 }
 
 .grid-row {
