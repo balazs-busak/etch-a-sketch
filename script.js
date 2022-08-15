@@ -1,5 +1,6 @@
 const container = document.querySelector('.container');
 const board = document.querySelector('.board');
+let color = 'black';
 
 let sizeNum = 16;
 // Function to create a number of divs in rows in which there are cells so it makes a square, using loops.
@@ -31,7 +32,7 @@ document.body.onmouseup = () => (mouseDown = false)
 // Clicked hover effect function
 function changeColor(e) {
     if (e.type === 'mouseover' && mouseDown) {
-        e.target.style.backgroundColor = 'black'
+        e.target.style.backgroundColor = color
     }
 }
 
@@ -58,5 +59,15 @@ const resetBtn = document.querySelector('#reset');
 resetBtn.addEventListener('click', function() {
     document.querySelectorAll(".grid-cell").forEach(e => e.remove());
     createGrid(sizeNum);
+});
+
+const blackButton = document.querySelector('#black');
+blackButton.addEventListener('click', function() {
+   color = 'black'
+});
+
+const rainbowButton = document.querySelector('#rainbow');
+rainbowButton.addEventListener('click', function() {
+   color = `hsl(${Math.random() * 360}, 100%, 50%)`;
 });
 
