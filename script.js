@@ -29,14 +29,13 @@ createGrid(sizeNum)
 let mouseDown = false
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
-// Clicked hover effect function
+//Clicked hover effect function
 function changeColor(e) {
     if (e.type === 'mouseover' && mouseDown) {
-       return e.target.style.backgroundColor = color;
-    } else if ((color == randomColor()) && (e.type == 'mouseover' && mouseDown)) {
-        return e.target.style.backgroundColor = randomColor();
+        return e.target.style.backgroundColor = color;
     }
-}
+} 
+  
 
 function newSize () {
     const boardSize = document.querySelector('#sizeSelector').value;
@@ -68,17 +67,13 @@ blackButton.addEventListener('click', function() {
    color = 'black'
 });
 
-const rainbowButton = document.querySelector('#rainbow');
+const rainbowButton = document.querySelector('#random');
 rainbowButton.addEventListener('click', function() {
-    color = randomColor();
+    color = `hsl(${Math.random() * 360}, 100%, 50%)`;
 });
 
-function randomColor(e) {
+function randomColor() {
     randColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    return randColor;
+        return randColor;
     
 };
-
-//One solution here @busi, could be to simply add more conditionals to your changeColor function. Right now it checks for click/drag,
-// but you can also make it check first for rainbow, then click/drag. If this all is true, then you set the background color of the div to the result of a function call, 
-//for example generateRandColor, and this function should return a new random value.
